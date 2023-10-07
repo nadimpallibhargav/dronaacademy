@@ -89,100 +89,107 @@ header {
         display: flex;
         align-items: center;
         gap: 20px;
+    }    
+}
+
+// Define your colors as variables
+$earthly-brown: #8B4513;
+$golden-yellow: #FFD700;
+$mahogany: #420000;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Set your desired background color */
+}
+
+.bannerSection {
+    background-color: $earthly-brown;
+    color: $golden-yellow;    
+
+    .bannerContentWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+  .bannerContent {
+    flex: 1;
+
+    .bannerHeading {
+      font-size: 4.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      font-size: 2rem;
+      margin-bottom: 2.4rem;
+      line-height: 1.4em;
+    }
+
+    button {
+      background-color: $mahogany;
+      color: $golden-yellow;
+      padding: 1.8rem 3rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;        
+      &:hover {
+        background-color: $golden-yellow;
+        color: $mahogany;
+      }
     }
     
-}
+  }
 
-.banner {
-    background-image: url('https://img.youtube.com/vi/uA_UxomLIN8/maxresdefault.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .banner-content {
-            flex: 1;
-            text-align: left;
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1.2rem;
-            }
-
-            .apply-button {
-                background-color: #ff5722;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                font-size: 1rem;
-                cursor: pointer;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        .video-section {
-            flex: 1;
-            text-align: right;
-
-            .play-button {
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                font-size: 1rem;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-
-                img {
-                    margin-right: 10px;
-                }
-            }
-        }
-    }
-}
-
-/* Add styles for the video popup */
-.video-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    justify-content: center;
+  .bannerVideo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    
+    svg {
+      width: 80px;
+      height: 80px;
+      fill: $mahogany;
+      transition: fill 0.3s;
+      cursor: pointer;
 
-    iframe {
-        width: 80%;
-        height: 60%;
+      &:hover {
+        fill: $golden-yellow;
+      }
     }
 
-    .close-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: transparent;
-        border: none;
-        font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
+    P {
+      margin-top: 1rem;
+      font-size: 2.6rem;
     }
+  }
+
+  @media (max-width: 768px) {
+    
+    .bannerContentWrapper {
+      flex-direction: column;
+    }
+
+    .bannerContent,
+    .bannerVideo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .bannerVideo {
+      svg {
+        width: 60px;
+        height: 60px;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
 }
-
-
-// Define styles for other sections and elements similarly
