@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.7019607843);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 36px;
+  padding: 6px 16px;
+}
+
+section {
+  padding-block: 48px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+header {
+  background-color: #000000;
+  color: #ffffff;
+  padding-block: 16px;
+}
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header ul {
+  display: flex;
+  gap: 20px;
+}
+header a {
+  font-size: 1.4rem;
+}
+header .buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.banner {
+  background-image: url("https://img.youtube.com/vi/uA_UxomLIN8/maxresdefault.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+.banner .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .container .banner-content {
+  flex: 1;
+  text-align: left;
+}
+.banner .container .banner-content h1 {
+  font-size: 2.5rem;
+}
+.banner .container .banner-content p {
+  font-size: 1.2rem;
+}
+.banner .container .banner-content .apply-button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.banner .container .banner-content h2 {
+  font-size: 1.5rem;
+}
+.banner .container .video-section {
+  flex: 1;
+  text-align: right;
+}
+.banner .container .video-section .play-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.banner .container .video-section .play-button img {
+  margin-right: 10px;
+}
+
+/* Add styles for the video popup */
+.video-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+.video-popup iframe {
+  width: 80%;
+  height: 60%;
+}
+.video-popup .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
