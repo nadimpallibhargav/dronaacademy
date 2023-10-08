@@ -358,4 +358,53 @@ header .buttons {
   }
 }
 
+.featuresSection {
+  background-color: #420000;
+  color: #FFD700;
+  text-align: center;
+}
+.featuresSection h2 {
+  margin-bottom: 30px;
+}
+.featuresSection .featuresFlex {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.featuresSection .featuresFlex:first-of-type {
+  margin-bottom: 48px;
+}
+.featuresSection .featureCard {
+  max-width: 280px;
+  text-align: center;
+  padding: 24px;
+  background-color: rgba(255, 215, 0, 0.1);
+  border-radius: 16px;
+  border: 1px solid #FFD700;
+}
+.featuresSection .featureCard img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.featuresSection .featureCard h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+.featuresSection .featureCard p {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+@media screen and (max-width: 768px) {
+  .featuresSection .featuresFlex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .featuresSection .featureCard {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
