@@ -69,20 +69,24 @@ h2.heading {
 header {
   background-color: #000000;
   color: #ffffff;
-  padding-block: 16px;
+  padding: 16px;
 }
-header .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+header .logo img {
+  border-radius: 25px;
 }
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header ul {
+header ul.menu {
   display: flex;
   gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  header ul.menu {
+    display: none;
+  }
 }
 header a {
   font-size: 1.4rem;
@@ -91,6 +95,83 @@ header .buttons {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+header .apply-now {
+  background-color: transparent;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+header .apply-now:hover {
+  background-color: #FFD700;
+  color: #420000;
+}
+header .apply-now:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+header ul.mobile-menu {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  background-color: #000000;
+  position: absolute;
+  top: 74px;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+}
+@media screen and (max-width: 768px) {
+  header ul.mobile-menu {
+    display: none;
+  }
+  header ul.mobile-menu.active {
+    display: flex;
+  }
+}
+header ul.mobile-menu li {
+  margin-bottom: 10px;
+  text-align: center;
+  padding-block: 20px;
+}
+header ul.mobile-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+header .menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+header .menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+header .menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+header .bar {
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  header {
+    display: block;
+  }
+  header .menu-toggle {
+    display: flex;
+  }
 }
 
 .bannerSection {
@@ -202,6 +283,7 @@ header .buttons {
 .aboutSection img {
   height: auto;
   width: 400px;
+  border-radius: 25px;
 }
 @media screen and (max-width: 768px) {
   .aboutSection .flexLayout {
@@ -260,7 +342,8 @@ header .buttons {
 }
 .testimonialsSection .sliderControls {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
   align-items: center;
   margin-top: 20px;
 }
@@ -270,26 +353,29 @@ header .buttons {
   color: #420000;
   border: none;
   padding: 10px 20px;
+  margin: 0 10px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  flex: 0 0 auto;
+}
+.testimonialsSection .prevSlideBtn svg {
+  transform: rotate(180deg);
 }
 .testimonialsSection .prevSlideBtn:hover,
 .testimonialsSection .nextSlideBtn:hover {
   background-color: #420000;
   color: #FFD700;
 }
-.testimonialsSection .absoluteLeft {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.testimonialsSection .absoluteRight {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(50%, -50%);
+@media (max-width: 768px) {
+  .testimonialsSection .testimonial {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .testimonialsSection .testimonialText {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+  }
 }
 
 .coachesSection {
@@ -337,7 +423,7 @@ header .buttons {
 .coachesSection .coachesImage img {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 @media screen and (max-width: 768px) {
   .coachesSection .coachesFlex {
@@ -519,6 +605,7 @@ footer .footer-flex .footer-left {
 }
 footer .footer-flex .footer-left img {
   max-width: 100px;
+  border-radius: 25px;
 }
 footer .footer-flex .footer-left p {
   margin-top: 24px;
@@ -566,20 +653,12 @@ footer .footer-bottom .social-icons {
   footer .footer-flex {
     flex-direction: column;
     align-items: center;
-  }
-  footer .footer-flex .footer-left {
-    text-align: center;
-  }
-  footer .footer-flex .footer-right {
-    flex-direction: column;
-  }
-  footer .footer-flex .footer-right .footer-section {
-    margin-bottom: 20px;
     text-align: center;
   }
   footer .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
   footer .footer-bottom .social-icons {
     margin-top: 10px;

@@ -12,17 +12,28 @@
   <header>
     <div class="container">
       <nav>
-        <span class="logo">D R O N A</span>
-        <ul>
+        <span class="logo"><img src="./assets/images/logo.png" width="75" alt="logo"></span>
+        <ul class="menu">
           <li><a href="">Coaches</a></li>
           <li><a href="">Press & Media</a></li>
         </ul>
         <div class="buttons">
-          <button>Apply Now</button>
+          <button class="apply-now">Apply Now</button>
+          <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
         </div>
       </nav>
+      <ul class="mobile-menu">
+        <li><a href="">Coaches</a></li>
+        <li><a href="">Press & Media</a></li>
+      </ul>
     </div>
   </header>
+
+
   <section class="bannerSection">
     <div class="container">
       <div class="bannerContentWrapper">
@@ -55,13 +66,13 @@
             project-oriented, keeping kids excited for the next class!</p>
         </div>
         <div class="flexImage">
-          <img src="https://stayqrious.com/assets/images/Features_Group_38028.png" alt="Quality Education Image">
+          <img src="./assets/images/girls.jpg" alt="Quality Education Image">
         </div>
       </div>
 
       <div class="flexLayout reversed">
         <div class="flexImage">
-          <img src="https://stayqrious.com/assets/images/measured.png" alt="Experienced Instructors Image">
+          <img src="./assets/images/boys.jpg" alt="Experienced Instructors Image">
         </div>
         <div class="flexContent">
           <h3>Learning is measured right</h3>
@@ -79,7 +90,7 @@
             learning journey.</p>
         </div>
         <div class="flexImage">
-          <img src="https://stayqrious.com/assets/images/Features_Group_38030.png" alt="Modern Facilities Image">
+          <img src="./assets/images/founder.png" alt="Modern Facilities Image">
         </div>
       </div>
 
@@ -94,7 +105,7 @@
           <div class="sliderItem">
             <div class="testimonial">
               <div class="testimonialImage">
-                <img src="https://stayqrious.com/assets/images/Features_Group_38030.png" alt="Student 1">
+                <img src="./assets/images/girls.jpg" alt="Student 1">
               </div>
               <div class="testimonialContent">
                 <p class="testimonialText">I find my son more engaged in StayQrious than even his regular online school.
@@ -108,7 +119,7 @@
           <div class="sliderItem">
             <div class="testimonial">
               <div class="testimonialImage">
-                <img src="https://stayqrious.com/assets/images/Features_Group_38030.png" alt="Student 2">
+                <img src="./assets/images/boys.jpg" alt="Student 2">
               </div>
               <div class="testimonialContent">
                 <p class="testimonialText">I find my son more engaged in StayQrious than even his regular online school.
@@ -123,7 +134,7 @@
           <div class="sliderItem">
             <div class="testimonial">
               <div class="testimonialImage">
-                <img src="https://stayqrious.com/assets/images/Features_Group_38030.png" alt="Student 3">
+                <img src="./assets/images/girls.jpg" alt="Student 3">
               </div>
               <div class="testimonialContent">
                 <p class="testimonialText">I find my son more engaged in StayQrious than even his regular online school.
@@ -137,8 +148,20 @@
           </div>
         </div>
         <div class="sliderControls">
-          <button class="prevSlideBtn absoluteLeft">&lt;</button>
-          <button class="nextSlideBtn absoluteRight">&gt;</button>
+          <button class="prevSlideBtn">
+            <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20">
+              <path
+                d="M14.5 10l-6.147-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414-1.414L14.5 10z">
+              </path>
+            </svg>
+          </button>
+          <button class="nextSlideBtn">
+            <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20">
+              <path
+                d="M14.5 10l-6.147-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414-1.414L14.5 10z">
+              </path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -159,7 +182,7 @@
           <button>Learn More About Coach</button>
         </div>
         <div class="coachesImage">
-          <img src="https://stayqrious.com/assets/images/Features_Group_38028.png" alt="Coach Image">
+          <img src="./assets/images/founder.png" alt="Coach Image">
         </div>
       </div>
     </div>
@@ -289,7 +312,7 @@
     <div class="container">
       <div class="footer-flex">
         <div class="footer-left">
-          <img src="your-logo.png" alt="Your Logo">
+          <img src="./assets/images/logo.png" width="75" alt="Your Logo">
           <p>Your paragraph text here.</p>
         </div>
         <div class="footer-section">
@@ -369,9 +392,17 @@
           }
         });
       });
-    });
-  </script>
 
+      const mobileMenuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      mobileMenuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+      });
+    });
+
+  </script>
 
 </body>
 
