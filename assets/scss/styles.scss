@@ -46,6 +46,10 @@ li {
   list-style-type: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   background-color: $colorWhiteOne;
   color: $colorBlackOne;
@@ -234,9 +238,8 @@ header {
   }
 
   img {
-    max-width: 100%;
     height: auto;
-    max-width: 400px;
+    width: 400px;
   }
 
   /* Media query for responsiveness */
@@ -345,5 +348,80 @@ header {
     right: 0;
     top: 50%;
     transform: translate(50%, -50%);
+  }
+}
+
+/* Add styles for the Coaches section */
+
+.coachesSection {
+  background-color: #420000;
+  color: #FFD700;
+  padding: 60px 0;
+
+  .coachesFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .coachesContent {
+    flex: 0 0 50%;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-size: 3.4rem;
+    line-height: 1.4em;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.6em;
+    margin-bottom: 12px;
+  }
+
+  button {
+    background-color: transparent;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #FFD700;
+      color: #420000;
+    }
+  }
+
+  .coachesImage {
+    flex: 0 0 45%;
+    text-align: right;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .coachesFlex {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+
+    .coachesContent {
+      flex: 0 0 100%;
+    }
+
+    .coachesImage {
+      margin-top: 20px;
+      text-align: center;
+    }
   }
 }
