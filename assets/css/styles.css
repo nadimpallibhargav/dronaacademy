@@ -172,7 +172,6 @@ header .buttons {
   background-color: #FFD700;
   padding: 60px 0;
   text-align: center;
-  /* Media query for responsiveness */
 }
 .aboutSection h3 {
   color: #420000;
@@ -214,12 +213,10 @@ header .buttons {
   }
 }
 
-/* ... (Existing CSS Styles) ... */
 .testimonialsSection {
   background-color: #8B4513;
   padding: 60px 0;
   text-align: center;
-  /* Position the buttons absolutely */
 }
 .testimonialsSection .testimonialsHeading {
   color: #FFD700;
@@ -295,7 +292,6 @@ header .buttons {
   transform: translate(50%, -50%);
 }
 
-/* Add styles for the Coaches section */
 .coachesSection {
   background-color: #420000;
   color: #FFD700;
@@ -404,6 +400,189 @@ header .buttons {
   .featuresSection .featureCard {
     max-width: 100%;
     margin-bottom: 20px;
+  }
+}
+
+.faqSection {
+  background-color: #fff;
+  text-align: center;
+}
+.faqSection h2 {
+  margin-bottom: 30px;
+  color: #333;
+}
+.faqSection .faqAccordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faqSection span {
+  font-size: 2rem;
+}
+.faqSection .faqItem {
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+  text-align: left;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+.faqSection .faqItem .faqQuestion {
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faqSection .faqItem .faqQuestion .arrowIcon {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+.faqSection .faqItem .faqAnswer {
+  display: none;
+  color: #333;
+  padding-top: 8px;
+  font-size: 1.6rem;
+}
+.faqSection .faqItem.active .faqAnswer {
+  display: block;
+}
+.faqSection .faqItem.active .faqQuestion .arrowIcon {
+  transform: rotate(180deg);
+}
+
+.callToActionSection {
+  background-color: #420000;
+  color: #FFD700;
+  text-align: center;
+  /* Media query for responsiveness */
+}
+.callToActionSection h2 {
+  margin-bottom: 20px;
+}
+.callToActionSection .ctaButton {
+  background-color: transparent;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.callToActionSection .ctaButton svg {
+  fill: #FFD700;
+}
+.callToActionSection .ctaButton .arrowIcon {
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.callToActionSection .ctaButton:hover {
+  background-color: #FFD700;
+  color: #420000;
+}
+.callToActionSection .ctaButton:hover svg {
+  fill: #420000;
+}
+@media screen and (max-width: 768px) {
+  .callToActionSection .ctaButton {
+    font-size: 14px;
+  }
+}
+
+/* Footer Section */
+footer {
+  background-color: #420000;
+  color: #FFD700;
+  padding: 40px 0;
+  border-top: 1px solid rgb(97, 97, 97);
+}
+footer h3 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+footer .footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 40px;
+  gap: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+footer .footer-flex .footer-left {
+  flex: 1;
+}
+footer .footer-flex .footer-left img {
+  max-width: 100px;
+}
+footer .footer-flex .footer-left p {
+  margin-top: 24px;
+  font-size: 1.6rem;
+}
+footer .footer-flex .footer-right {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+}
+footer .footer-flex .footer-right .footer-section {
+  flex: 1;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  margin-bottom: 10px;
+}
+footer ul li a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-size: 1.6rem;
+}
+footer ul li a:hover {
+  color: #8B4513;
+}
+footer .footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+footer .footer-bottom p {
+  font-size: 14px;
+}
+footer .footer-bottom .social-icons {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  footer .footer-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-flex .footer-left {
+    text-align: center;
+  }
+  footer .footer-flex .footer-right {
+    flex-direction: column;
+  }
+  footer .footer-flex .footer-right .footer-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  footer .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .footer-bottom .social-icons {
+    margin-top: 10px;
   }
 }
 

@@ -212,6 +212,121 @@
     </div>
   </section>
 
+  <section class="faqSection">
+    <div class="container">
+      <h2 class="heading">Got questions? We've got answers!</h2>
+      <div class="faqAccordion">
+        <div class="faqItem">
+          <div class="faqQuestion">
+            <span>Question 1</span>
+            <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 1 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+          <div class="faqAnswer">
+            Answer 1 goes here.
+          </div>
+        </div>
+        <div class="faqItem">
+          <div class="faqQuestion">
+            <span>Question 2</span>
+            <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 1 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+          <div class="faqAnswer">
+            Answer 2 goes here.
+          </div>
+        </div>
+        <div class="faqItem">
+          <div class="faqQuestion">
+            <span>Question 3</span>
+            <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 1 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+          <div class="faqAnswer">
+            Answer 3 goes here.
+          </div>
+        </div>
+        <div class="faqItem">
+          <div class="faqQuestion">
+            <span>Question 4</span>
+            <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 1 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+          <div class="faqAnswer">
+            Answer 4 goes here.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="callToActionSection">
+    <div class="container">
+      <h2 class="heading">Help your child learn the right way at StayQrious</h2>
+      <button class="ctaButton">
+        Apply Now
+        <svg class="arrowIcon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20">
+          <path
+            d="M14.5 10l-6.147-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414-1.414L14.5 10z" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-flex">
+        <div class="footer-left">
+          <img src="your-logo.png" alt="Your Logo">
+          <p>Your paragraph text here.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">Our Coaches</a></li>
+            <li><a href="#">Press & Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Your Company All rights reserved</p>
+        <div class="social-icons">
+          <a href="#">
+            <img src="https://stayqrious.com/_next/static/media/linkedInIcon.ee55ea63.png" alt="LinkedIn" width="36"
+              height="36">
+          </a>
+          <a href="#">
+            <img src="https://stayqrious.com/_next/static/media/fbIcon.1319fd11.png" alt="Facebook" width="36"
+              height="36">
+          </a>
+          <a href="#">
+            <img src="https://stayqrious.com/_next/static/media/waIcon.8b166a86.png" alt="WhatsApp" width="36"
+              height="36">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
     const sliderWrapper = document.querySelector('.sliderWrapper');
     const prevSlideBtn = document.querySelector('.prevSlideBtn');
@@ -234,6 +349,29 @@
     });
 
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqItems = document.querySelectorAll('.faqItem');
+
+      faqItems.forEach(function (item) {
+        const question = item.querySelector('.faqQuestion');
+        const answer = item.querySelector('.faqAnswer');
+
+        question.addEventListener('click', function () {
+          if (item.classList.contains('active')) {
+            item.classList.remove('active');
+          } else {
+            faqItems.forEach(function (faqItem) {
+              faqItem.classList.remove('active');
+            });
+            item.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
 
 </body>
 
