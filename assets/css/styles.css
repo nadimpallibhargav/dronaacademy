@@ -13,7 +13,12 @@ body {
   color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #ffffff;
 }
 
@@ -32,16 +37,13 @@ li {
 }
 
 button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-button {
   background-color: #ffffff;
   color: #000000;
   border-radius: 36px;
   padding: 6px 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 section {
@@ -52,6 +54,12 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding-inline: 20px;
+}
+
+h2.heading {
+  font-weight: 700;
+  font-size: 3.4rem;
+  letter-spacing: 0.085px;
 }
 
 header {
@@ -79,12 +87,6 @@ header .buttons {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff; /* Set your desired background color */
 }
 
 .bannerSection {
@@ -160,6 +162,134 @@ body {
   .bannerSection .bannerVideo p {
     text-align: center;
   }
+}
+
+.aboutSection {
+  background-color: #FFD700;
+  padding: 60px 0;
+  text-align: center;
+  /* Media query for responsiveness */
+}
+.aboutSection h3 {
+  color: #420000;
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+.aboutSection .flexLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+}
+.aboutSection .flexContent {
+  text-align: left;
+  flex: 1;
+}
+.aboutSection p {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.4em;
+  color: #420000;
+  margin-bottom: 20px;
+}
+.aboutSection .flexImage {
+  flex: 1;
+  text-align: center;
+}
+.aboutSection img {
+  max-width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+@media screen and (max-width: 768px) {
+  .aboutSection .flexLayout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .aboutSection .flexLayout.reversed {
+    flex-direction: column-reverse;
+  }
+}
+
+/* ... (Existing CSS Styles) ... */
+.testimonialsSection {
+  background-color: #8B4513;
+  padding: 60px 0;
+  text-align: center;
+  /* Position the buttons absolutely */
+}
+.testimonialsSection .testimonialsHeading {
+  color: #FFD700;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.testimonialsSection .testimonialSlider {
+  position: relative;
+}
+.testimonialsSection .sliderWrapper {
+  display: flex;
+  overflow: hidden;
+}
+.testimonialsSection .sliderItem {
+  flex: 0 0 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.testimonialsSection .testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.testimonialsSection .testimonialImage {
+  flex: 0 0 30%;
+}
+.testimonialsSection .testimonialImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7019607843);
+}
+.testimonialsSection .testimonialContent {
+  flex: 0 0 70%;
+  text-align: left;
+  padding: 0 20px;
+}
+.testimonialsSection .testimonialText {
+  color: #FFD700;
+  font-size: 2.6rem;
+}
+.testimonialsSection .sliderControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.testimonialsSection .prevSlideBtn,
+.testimonialsSection .nextSlideBtn {
+  background-color: #FFD700;
+  color: #420000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  flex: 0 0 auto;
+}
+.testimonialsSection .prevSlideBtn:hover,
+.testimonialsSection .nextSlideBtn:hover {
+  background-color: #420000;
+  color: #FFD700;
+}
+.testimonialsSection .absoluteLeft {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.testimonialsSection .absoluteRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
 }
 
 /*# sourceMappingURL=styles.css.map */

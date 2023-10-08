@@ -4,115 +4,116 @@ $colorWhiteTwo: #ffffffb3;
 $colorBlackOne: #000000;
 $colorBlackTwo: #121212;
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 10px;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: $colorBlackTwo;
-    color: $colorWhiteOne;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: $colorWhiteOne;
-}
-
-p {
-    color: $colorWhiteTwo;
-}
-
-a {
-    text-decoration: none;
-    color: unset;
-    cursor: pointer;
-}
-
-li {
-    list-style-type: none;
-}
-
-button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-button {
-    background-color: $colorWhiteOne;
-    color: $colorBlackOne;
-    border-radius: 36px;
-    padding: 6px 16px;
-}
-
-section {
-    padding-block: 48px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-inline: 20px;
-}
-
-header {
-    background-color: $colorBlackOne;
-    color: $colorWhiteOne;    
-    padding-block: 16px;
-
-    .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul {
-        display: flex;
-        gap: 20px;        
-    }
-
-    a {
-        font-size: 1.4rem;
-    }
-
-    .buttons{
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }    
-}
-
-// Define your colors as variables
 $earthly-brown: #8B4513;
 $golden-yellow: #FFD700;
 $mahogany: #420000;
 
-body {
+* {
   margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background-color: #fff; /* Set your desired background color */
+  background-color: $colorBlackTwo;
+  color: $colorWhiteOne;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $colorWhiteOne;
+}
+
+p {
+  color: $colorWhiteTwo;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: $colorWhiteOne;
+  color: $colorBlackOne;
+  border-radius: 36px;
+  padding: 6px 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+section {
+  padding-block: 48px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+h2.heading {
+  font-weight: 700;
+  font-size: 3.4rem;
+  letter-spacing: 0.085px;
+}
+
+header {
+  background-color: $colorBlackOne;
+  color: $colorWhiteOne;
+  padding-block: 16px;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  a {
+    font-size: 1.4rem;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 .bannerSection {
-    background-color: $earthly-brown;
-    color: $golden-yellow;    
+  background-color: $earthly-brown;
+  color: $golden-yellow;
 
-    .bannerContentWrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .bannerContentWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .bannerContent {
     flex: 1;
@@ -136,13 +137,14 @@ body {
       font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: background-color 0.3s;        
+      transition: background-color 0.3s;
+
       &:hover {
         background-color: $golden-yellow;
         color: $mahogany;
       }
     }
-    
+
   }
 
   .bannerVideo {
@@ -150,7 +152,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     svg {
       width: 80px;
       height: 80px;
@@ -170,7 +172,7 @@ body {
   }
 
   @media (max-width: 768px) {
-    
+
     .bannerContentWrapper {
       flex-direction: column;
     }
@@ -187,9 +189,161 @@ body {
         width: 60px;
         height: 60px;
       }
+
       p {
         text-align: center;
       }
     }
+  }
+}
+
+.aboutSection {
+  background-color: #FFD700;
+  padding: 60px 0;
+  text-align: center;
+
+  h3 {
+    color: #420000;
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+  }
+
+  .flexLayout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  .flexContent {
+    text-align: left;
+    flex: 1;
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    color: #420000;
+    margin-bottom: 20px;
+  }
+
+  .flexImage {
+    flex: 1;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  /* Media query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .flexLayout {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .flexLayout.reversed {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+/* ... (Existing CSS Styles) ... */
+
+.testimonialsSection {
+  background-color: #8B4513;
+  padding: 60px 0;
+  text-align: center;
+
+  .testimonialsHeading {
+    color: #FFD700;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .testimonialSlider {
+    position: relative;
+  }
+
+  .sliderWrapper {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .sliderItem {
+    flex: 0 0 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .testimonial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .testimonialImage {
+    flex: 0 0 30%;
+  }
+
+  .testimonialImage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid $colorWhiteTwo;
+  }
+
+  .testimonialContent {
+    flex: 0 0 70%;
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .testimonialText {
+    color: #FFD700;
+    font-size: 2.6rem;
+  }
+
+  .sliderControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .prevSlideBtn,
+  .nextSlideBtn {
+    background-color: #FFD700;
+    color: #420000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    flex: 0 0 auto;
+  }
+
+  .prevSlideBtn:hover,
+  .nextSlideBtn:hover {
+    background-color: #420000;
+    color: #FFD700;
+  }
+
+  /* Position the buttons absolutely */
+  .absoluteLeft {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .absoluteRight {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
   }
 }
