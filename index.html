@@ -41,7 +41,8 @@
           <h1 class="bannerHeading">Drona Mastermind Academy </h1>
           <p>
             Just like the legendary archer Dronaacharya, who tailored his teachings to the unique strengths and
-            capabilities of each of his pupils, our educators at Drona are committed to providing personalized tutoring that understands and
+            capabilities of each of his pupils, our educators at Drona are committed to providing personalized tutoring
+            that understands and
             empathizes with each student's unique learning style.
           </p>
           <button>APPLY NOW</button>
@@ -56,6 +57,19 @@
       </div>
     </div>
   </section>
+
+  <div id="popupOverlay" class="popupOverlay">
+    <div class="popupContent">
+      <iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/your-video-id"
+        frameborder="0" allowfullscreen></iframe>
+      <button id="closePopupButton" class="closePopupButton"><svg class="closeIcon" xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#fff" width="16" height="16"
+            d="M19.35 4.929l-1.06-1.061L12 10.94 5.725 4.868 4.665 5.93 10.94 12l-6.063 6.062 1.06 1.061L12 13.06l6.275 6.063 1.061-1.061L13.06 12l6.291-6.071z" />
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <section class="aboutSection">
     <div class="container">
@@ -311,6 +325,18 @@
     </div>
   </section>
 
+  <div id="formPopup" class="popupOverlay">
+    <div class="popupContent">
+      <div>form</div>
+      <button id="closePopupButtonForm" class="closePopupButton"><svg class="closeIcon" xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#fff" width="16" height="16"
+            d="M19.35 4.929l-1.06-1.061L12 10.94 5.725 4.868 4.665 5.93 10.94 12l-6.063 6.062 1.06 1.061L12 13.06l6.275 6.063 1.061-1.061L13.06 12l6.291-6.071z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <footer>
     <div class="container">
       <div class="footer-flex">
@@ -350,59 +376,7 @@
     </div>
   </footer>
 
-  <script>
-    const sliderWrapper = document.querySelector('.sliderWrapper');
-    const prevSlideBtn = document.querySelector('.prevSlideBtn');
-    const nextSlideBtn = document.querySelector('.nextSlideBtn');
-
-    let currentSlide = 0;
-
-    nextSlideBtn.addEventListener('click', () => {
-      sliderWrapper.scrollLeft += sliderWrapper.clientWidth;
-      if (sliderWrapper.scrollLeft >= sliderWrapper.scrollWidth) {
-        sliderWrapper.scrollLeft = 0;
-      }
-    });
-
-    prevSlideBtn.addEventListener('click', () => {
-      sliderWrapper.scrollLeft -= sliderWrapper.clientWidth;
-      if (sliderWrapper.scrollLeft < 0) {
-        sliderWrapper.scrollLeft = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
-      }
-    });
-
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const faqItems = document.querySelectorAll('.faqItem');
-
-      faqItems.forEach(function (item) {
-        const question = item.querySelector('.faqQuestion');
-        const answer = item.querySelector('.faqAnswer');
-
-        question.addEventListener('click', function () {
-          if (item.classList.contains('active')) {
-            item.classList.remove('active');
-          } else {
-            faqItems.forEach(function (faqItem) {
-              faqItem.classList.remove('active');
-            });
-            item.classList.add('active');
-          }
-        });
-      });
-
-      const mobileMenuToggle = document.querySelector('.menu-toggle');
-      const mobileMenu = document.querySelector('.mobile-menu');
-
-      mobileMenuToggle.addEventListener('click', function () {
-        mobileMenu.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
-      });
-    });
-
-  </script>
+  <script src="./assets/js/script.js"></script>
 
 </body>
 
