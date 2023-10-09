@@ -1,11 +1,11 @@
-$colorWhiteOne: #ffffff;
-$colorWhiteTwo: #ffffffb3;
+$whiteOne: #ffffff;
+$whiteTwo: #f5f5f5;
 
-$colorBlackOne: #000000;
+$blackOne: #000000;
+$blackTwo: #333333;
+$blackThree: rgba($blackTwo, 0.8);
 
-$earthly-brown: #8b4513;
-$golden-yellow: #ffd700;
-$mahogany: #420000;
+$blueOne: #3498db;
 
 * {
   margin: 0;
@@ -19,8 +19,8 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: $mahogany;
-  color: $colorWhiteOne;
+  background-color: $whiteTwo;
+  color: $blackTwo;
 }
 
 h1,
@@ -29,11 +29,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: $colorWhiteOne;
+  color: $blackTwo;
 }
 
 p {
-  color: $colorWhiteTwo;
+  color: $blackThree;
 }
 
 a {
@@ -51,8 +51,8 @@ img {
 }
 
 button {
-  background-color: $colorWhiteOne;
-  color: $colorBlackOne;
+  background-color: $blackTwo;
+  color: $blackOne;
   border-radius: 36px;
   padding: 6px 16px;
   outline: none;
@@ -70,9 +70,9 @@ section {
 }
 
 .commonBtn {
-  background-color: $golden-yellow;
-  color: $colorBlackOne;
-  border: 1px solid $golden-yellow;
+  background-color: $blueOne;
+  color: $blackOne;
+  border: 1px solid $blueOne;
   padding: 1.8rem 3rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -80,7 +80,7 @@ section {
 
   &:hover {
     background-color: transparent;
-    color: $golden-yellow;
+    color: $blueOne;
   }
 
   svg {
@@ -89,25 +89,25 @@ section {
 
   &:hover {
     background-color: transparent;
-    color: $golden-yellow;
+    color: $blueOne;
     svg {
-      fill: $golden-yellow;
+      fill: $blueOne;
     }
   }
 }
 
 .outlineBtn {
   background-color: transparent;
-  border: 2px solid $golden-yellow;
-  color: $golden-yellow;
+  border: 2px solid $blueOne;
+  color: $blueOne;
   padding: 10px 20px;
   font-size: 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
-    background-color: $golden-yellow;
-    color: $mahogany;
+    background-color: $blueOne;
+    color: $whiteTwo;
   }
 }
 
@@ -124,13 +124,14 @@ h2.heading {
 
 header {
   background-color: transparent;
-  color: $colorWhiteOne;
+  color: $blackTwo;
   padding: 16px;
-  border-bottom: 1px solid $colorWhiteTwo;
+  border-bottom: 1px solid $blackThree;
 
   .logo {
     img {
       border-radius: 25px;
+      border: 1px solid $blackOne;
     }
   }
 
@@ -151,10 +152,10 @@ header {
       padding-block: 20px;
 
       a {
-        color: $colorWhiteOne;
+        color: $blackOne;
         font-size: 1.6rem;
         &:hover {
-          color: $golden-yellow;
+          color: $blueOne;
         }
       }
     }
@@ -169,13 +170,13 @@ header {
   ul.mobile-menu {
     display: none;
     flex-direction: column;
-    background-color: $colorBlackOne;
+    background-color: $blackOne;
     position: absolute;
     top: 74px;
     right: 0;
     width: 100%;
     padding: 10px;
-    border-bottom: 1px solid $golden-yellow;
+    border-bottom: 1px solid $blueOne;
   }
 
   .menu-toggle {
@@ -205,7 +206,7 @@ header {
   .bar {
     width: 100%;
     height: 2px;
-    background: $colorWhiteOne;
+    background: $blackTwo;
     transition: transform 0.3s ease;
   }
 
@@ -232,13 +233,13 @@ header {
 }
 
 .bannerSection {
-  background-color: $mahogany;
+  background-color: $whiteTwo;
   background-image: url("../images/founder.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  color: $colorWhiteOne;
+  color: $whiteOne;
   min-height: calc(100vh - 130px);
   display: flex;
   align-items: center;
@@ -246,7 +247,7 @@ header {
 
   &::before {
     content: "";
-    background-color: rgba($colorBlackOne, 0.8);
+    background-color: rgba($blackOne, 0.8);
     position: absolute;
     top: 0;
     right: 0;
@@ -265,6 +266,7 @@ header {
   h2 {
     font-size: 2.4rem;
     margin-bottom: 20px;
+    color: $blueOne;
   }
 
   .bannerContent {
@@ -273,12 +275,14 @@ header {
     .bannerHeading {
       font-size: 4.8rem;
       margin-bottom: 1.2rem;
+      color: $whiteOne;
     }
 
     p {
       font-size: 2rem;
       margin-bottom: 2.4rem;
       line-height: 1.4em;
+      color: $whiteOne;
     }
   }
 
@@ -288,26 +292,29 @@ header {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    color: $whiteOne;
 
     svg {
       width: 80px;
       height: 80px;
-      fill: $colorWhiteTwo;
+      fill: $blackThree;
       transition: fill 0.3s;
       cursor: pointer;
+      fill: $whiteOne;
     }
 
     P {
       margin-top: 1rem;
       font-size: 2.6rem;
+      color: $whiteOne;
     }
 
     &:hover {
       p {
-        color: $golden-yellow;
+        color: $blueOne;
       }
       svg {
-        fill: $golden-yellow;
+        fill: $blueOne;
       }
     }
   }
@@ -356,7 +363,7 @@ header {
   width: 100%;
   max-width: 100%;
   height: 100%;
-  background: rgba($colorBlackOne, 0.8);
+  background: rgba($blackOne, 0.8);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -367,18 +374,18 @@ header {
     min-height: 400px;
     margin: auto;
     margin-inline: 20px;
-    background: $colorBlackOne;
+    background: $blackOne;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba($colorBlackOne, 0.5);
+    box-shadow: 0px 0px 10px rgba($blackOne, 0.5);
     text-align: center;
     position: relative;
-    border: 1px solid $golden-yellow;
+    border: 1px solid $blueOne;
   }
 
   .closePopupButton {
-    background: $colorBlackOne;
-    color: $colorWhiteOne;
+    background: $blackOne;
+    color: $blackTwo;
     padding: 5px;
     border-radius: 50%;
     display: inline-flex;
@@ -389,12 +396,12 @@ header {
     right: 0;
     transform: translate(50%, -50%);
     svg {
-      fill: $colorWhiteOne;
+      fill: $blackTwo;
     }
   }
 
   .closePopupButton:hover {
-    background: $colorBlackOne;
+    background: $blackOne;
   }
 
   @media (max-width: 768px) {
@@ -410,12 +417,12 @@ header {
 }
 
 .aboutSection {
-  background-color: $mahogany;
+  background-color: $whiteTwo;
   padding: 60px 0;
   text-align: center;
 
   h3 {
-    color: $colorWhiteOne;
+    color: $blackTwo;
     font-size: 2.6rem;
     margin-bottom: 16px;
   }
@@ -436,7 +443,7 @@ header {
     font-size: 2rem;
     font-weight: 500;
     line-height: 1.4em;
-    color: $colorWhiteTwo;
+    color: $blackThree;
     margin-bottom: 20px;
   }
 
@@ -477,12 +484,12 @@ header {
 }
 
 .testimonialsSection {
-  background-color: $mahogany;
+  background-color: $whiteTwo;
   padding: 60px 0;
   text-align: center;
 
   .testimonialsHeading {
-    color: $colorWhiteOne;
+    color: $blackTwo;
     font-size: 28px;
     margin-bottom: 30px;
   }
@@ -519,7 +526,7 @@ header {
     object-position: top;
     max-width: 100%;
     border-radius: 50%;
-    border: 1px solid $colorWhiteTwo;
+    border: 1px solid $blackThree;
   }
 
   .testimonialContent {
@@ -529,7 +536,7 @@ header {
   }
 
   .testimonialText {
-    color: $colorWhiteOne;
+    color: $blackTwo;
     font-size: 2rem;
     line-height: 1.5em;
   }
@@ -544,9 +551,9 @@ header {
 
   .prevSlideBtn,
   .nextSlideBtn {
-    background-color: $golden-yellow;
-    border: 1px solid $golden-yellow;
-    color: $mahogany;
+    background-color: $blueOne;
+    border: 1px solid $blueOne;
+    color: $whiteTwo;
     padding: 5px 10px;
     margin: 0 10px;
     cursor: pointer;
@@ -564,10 +571,10 @@ header {
 
   .prevSlideBtn:hover,
   .nextSlideBtn:hover {
-    background-color: $mahogany;
-    color: $golden-yellow;
+    background-color: $whiteTwo;
+    color: $blueOne;
     svg {
-      fill: $golden-yellow;
+      fill: $blueOne;
     }
   }
 
@@ -587,8 +594,8 @@ header {
 }
 
 .coachesSection {
-  background-color: $mahogany;
-  color: $golden-yellow;
+  background-color: $whiteTwo;
+  color: $blueOne;
   padding: 60px 0;
 
   .coachesFlex {
@@ -645,8 +652,8 @@ header {
 }
 
 .featuresSection {
-  background-color: $mahogany;
-  color: $golden-yellow;
+  background-color: $whiteTwo;
+  color: $blueOne;
   text-align: center;
 
   .featuresFlex {
@@ -664,9 +671,9 @@ header {
     max-width: 280px;
     text-align: center;
     padding: 24px;
-    background-color: rgba($colorBlackOne, 0.3);
+    background-color: rgba($blackOne, 0.3);
     border-radius: 16px;
-    border: 1px solid $earthly-brown;
+    border: 1px solid $blueOne;
 
     img {
       max-width: 100%;
@@ -695,11 +702,11 @@ header {
 }
 
 .faqSection {
-  background-color: $mahogany;
+  background-color: $whiteTwo;
   text-align: center;
 
   h2 {
-    color: $colorWhiteOne;
+    color: $blackTwo;
   }
 
   .faqAccordion {
@@ -713,21 +720,22 @@ header {
 
   .faqItem {
     padding: 24px;
-    box-shadow: rgba($colorBlackOne, 0.2) 0px 2px 1px -1px,
-      rgba($colorBlackOne, 0.14) 0px 1px 1px 0px,
-      rgba($colorBlackOne, 0.12) 0px 1px 3px 0px;
+    box-shadow: rgba($blackOne, 0.2) 0px 2px 1px -1px,
+      rgba($blackOne, 0.14) 0px 1px 1px 0px,
+      rgba($blackOne, 0.12) 0px 1px 3px 0px;
     cursor: pointer;
     transition: border-color 0.3s ease-in-out;
     text-align: left;
-    background-color: rgba($colorWhiteOne, 0.9);
+    background-color: rgba($blackOne, 0.3);
     border-radius: 8px;
+    border: 1px solid $blueOne;
 
     &:not(:last-of-type) {
       margin-bottom: 20px;
     }
 
     .faqQuestion {
-      color: $colorBlackOne;
+      color: $blackOne;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
@@ -741,7 +749,7 @@ header {
 
     .faqAnswer {
       display: none;
-      color: $colorBlackOne;
+      color: $blackOne;
       padding-top: 8px;
       font-size: 1.6rem;
     }
@@ -770,8 +778,8 @@ header {
 }
 
 .callToActionSection {
-  background-color: $mahogany;
-  color: $golden-yellow;
+  background-color: $whiteTwo;
+  color: $blueOne;
   text-align: center;
 
   .ctaButton {
@@ -793,10 +801,10 @@ header {
 }
 
 footer {
-  background-color: $mahogany;
-  color: $golden-yellow;
+  background-color: $whiteTwo;
+  color: $blueOne;
   padding: 40px 0;
-  border-top: 1px solid rgba($golden-yellow, 0.4);
+  border-top: 1px solid rgba($blueOne, 0.4);
 
   h3 {
     font-size: 1.6rem;
@@ -811,7 +819,7 @@ footer {
     width: 100%;
     padding-bottom: 40px;
     gap: 48px;
-    border-bottom: 1px solid rgba($colorWhiteOne, 0.12);
+    border-bottom: 1px solid rgba($blackTwo, 0.12);
 
     .footer-left {
       flex: 1;
@@ -846,13 +854,13 @@ footer {
       margin-bottom: 10px;
 
       a {
-        color: $golden-yellow;
+        color: $blueOne;
         text-decoration: none;
         transition: color 0.3s ease-in-out;
         font-size: 1.6rem;
 
         &:hover {
-          color: $colorWhiteTwo;
+          color: $blackThree;
         }
       }
     }
@@ -875,7 +883,7 @@ footer {
       img {
         border-radius: 50%;
         &:hover {
-          box-shadow: 0 0 10px rgba($colorWhiteOne, 0.3);
+          box-shadow: 0 0 10px rgba($blackTwo, 0.3);
         }
       }
     }
