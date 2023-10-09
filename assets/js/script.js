@@ -61,14 +61,25 @@ closePopupButton.addEventListener('click', () => {
     popupOverlay.style.display = 'none';
 });
 
-const applyButton = document.querySelector('.ctaButton');
+// Get references to the Apply Now buttons
+const applyButtons = document.querySelectorAll('.ctaButton');
 const popupOverlayForm = document.getElementById('formPopup');
 const closePopupButtonForm = document.getElementById('closePopupButtonForm');
 
-applyButton.addEventListener('click', () => {
+// Function to open the form popup
+function openFormPopup() {
     popupOverlayForm.style.display = 'flex';
+}
+
+// Function to close the form popup
+function closeFormPopup() {
+    popupOverlayForm.style.display = 'none';
+}
+
+// Attach a click event listener to each Apply Now button
+applyButtons.forEach(function (applyButton) {
+    applyButton.addEventListener('click', openFormPopup);
 });
 
-closePopupButtonForm.addEventListener('click', () => {
-    popupOverlayForm.style.display = 'none';
-});
+// Attach a click event listener to the close button in the form popup
+closePopupButtonForm.addEventListener('click', closeFormPopup);

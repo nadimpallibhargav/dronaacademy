@@ -2,10 +2,9 @@ $colorWhiteOne: #ffffff;
 $colorWhiteTwo: #ffffffb3;
 
 $colorBlackOne: #000000;
-$colorBlackTwo: #121212;
 
-$earthly-brown: #8B4513;
-$golden-yellow: #FFD700;
+$earthly-brown: #8b4513;
+$golden-yellow: #ffd700;
 $mahogany: #420000;
 
 * {
@@ -15,11 +14,12 @@ $mahogany: #420000;
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: $colorBlackTwo;
+  background-color: $mahogany;
   color: $colorWhiteOne;
 }
 
@@ -60,7 +60,7 @@ button {
 }
 
 section {
-  padding-block: 48px;
+  padding-block: 60px;
 }
 
 .container {
@@ -69,16 +69,64 @@ section {
   padding-inline: 20px;
 }
 
+.commonBtn {
+  background-color: $golden-yellow;
+  color: $colorBlackOne;
+  border: 1px solid $golden-yellow;
+  padding: 1.8rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: transparent;
+    color: $golden-yellow;
+  }
+
+  svg {
+    fill: $mahogany;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: $golden-yellow;
+    svg {
+      fill: $golden-yellow;
+    }
+  }
+}
+
+.outlineBtn {
+  background-color: transparent;
+  border: 2px solid $golden-yellow;
+  color: $golden-yellow;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $golden-yellow;
+    color: $mahogany;
+  }
+}
+
 h2.heading {
   font-weight: 700;
   font-size: 3.4rem;
   letter-spacing: 0.085px;
+  margin-bottom: 50px;
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
+    font-size: 2.8rem;
+  }
 }
 
 header {
-  background-color: $colorBlackOne;
+  background-color: transparent;
   color: $colorWhiteOne;
   padding: 16px;
+  border-bottom: 1px solid $colorWhiteTwo;
 
   .logo {
     img {
@@ -94,15 +142,22 @@ header {
 
   ul.menu {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
+    z-index: 1;
 
-    @media screen and (max-width: 768px) {
-      display: none;
+    li {
+      text-align: center;
+      padding-block: 20px;
+
+      a {
+        color: $colorWhiteOne;
+        font-size: 1.6rem;
+        &:hover {
+          color: $golden-yellow;
+        }
+      }
     }
-  }
-
-  a {
-    font-size: 1.4rem;
   }
 
   .buttons {
@@ -111,28 +166,7 @@ header {
     gap: 20px;
   }
 
-  .apply-now {
-    background-color: transparent;
-    border: 2px solid #FFD700;
-    color: #FFD700;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-    &:hover {
-      background-color: #FFD700;
-      color: #420000;
-    }
-
-    &:hover {
-      background-color: $colorWhiteOne;
-      color: $colorBlackOne;
-    }
-  }
-
-  // Mobile Menu Styles
   ul.mobile-menu {
-    list-style: none;
     display: none;
     flex-direction: column;
     background-color: $colorBlackOne;
@@ -141,26 +175,7 @@ header {
     right: 0;
     width: 100%;
     padding: 10px;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-
-      &.active {
-        display: flex;
-      }
-    }
-
-    li {
-      margin-bottom: 10px;
-      text-align: center;
-      padding-block: 20px;
-
-      a {
-        color: $colorWhiteOne;
-        text-decoration: none;
-        font-size: 1.4rem;
-      }
-    }
+    border-bottom: 1px solid $golden-yellow;
   }
 
   .menu-toggle {
@@ -190,28 +205,66 @@ header {
   .bar {
     width: 100%;
     height: 2px;
-    background: #ffffff;
-    transition: transform .3s ease;
+    background: $colorWhiteOne;
+    transition: transform 0.3s ease;
   }
 
   @media screen and (max-width: 768px) {
     display: block;
 
+    ul.menu {
+      display: none;
+      gap: 0;
+    }
+
     .menu-toggle {
       display: flex;
+    }
+
+    ul.mobile-menu {
+      display: none;
+
+      &.active {
+        display: flex;
+      }
     }
   }
 }
 
 .bannerSection {
-  background-color: $colorBlackOne;
-  color: #ffffff;
+  background-color: $mahogany;
+  background-image: url("../images/founder.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: $colorWhiteOne;
+  min-height: calc(100vh - 130px);
+  display: flex;
+  align-items: center;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    background-color: rgba($colorBlackOne, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
 
   .bannerContentWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
   }
 
   .bannerContent {
@@ -227,23 +280,6 @@ header {
       margin-bottom: 2.4rem;
       line-height: 1.4em;
     }
-
-    button {
-      background-color: #FFD700;
-      color: #000000;
-      border: 1px solid #FFD700;
-      padding: 1.8rem 3rem;
-      font-size: 1.5rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: transparent;
-        color: #FFD700;
-      }
-    }
-
   }
 
   .bannerVideo {
@@ -253,34 +289,42 @@ header {
     align-items: center;
     cursor: pointer;
 
-    &:hover {
-      p {
-        color: #FFD700;
-      }
-    }
-
     svg {
       width: 80px;
       height: 80px;
-      fill: #f5f5f5;
+      fill: $colorWhiteTwo;
       transition: fill 0.3s;
       cursor: pointer;
-
-      &:hover {
-        fill: $golden-yellow;
-      }
     }
 
     P {
       margin-top: 1rem;
       font-size: 2.6rem;
     }
+
+    &:hover {
+      p {
+        color: $golden-yellow;
+      }
+      svg {
+        fill: $golden-yellow;
+      }
+    }
   }
 
   @media (max-width: 768px) {
-
     .bannerContentWrapper {
       flex-direction: column;
+      gap: 30px;
+    }
+
+    .bannerContent {
+      .bannerHeading {
+        font-size: 3.6rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
     }
 
     .bannerContent,
@@ -298,6 +342,7 @@ header {
 
       p {
         text-align: center;
+        font-size: 2rem;
       }
     }
   }
@@ -311,7 +356,7 @@ header {
   width: 100%;
   max-width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba($colorBlackOne, 0.8);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -322,17 +367,18 @@ header {
     min-height: 400px;
     margin: auto;
     margin-inline: 20px;
-    background: #000;
+    background: $colorBlackOne;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba($colorBlackOne, 0.5);
     text-align: center;
     position: relative;
+    border: 1px solid $golden-yellow;
   }
 
   .closePopupButton {
-    background: #2f2f2f;
-    color: #fff;
+    background: $colorBlackOne;
+    color: $colorWhiteOne;
     padding: 5px;
     border-radius: 50%;
     display: inline-flex;
@@ -342,10 +388,13 @@ header {
     top: 0;
     right: 0;
     transform: translate(50%, -50%);
+    svg {
+      fill: $colorWhiteOne;
+    }
   }
 
   .closePopupButton:hover {
-    background: #000000;
+    background: $colorBlackOne;
   }
 
   @media (max-width: 768px) {
@@ -361,12 +410,12 @@ header {
 }
 
 .aboutSection {
-  background-color: #420000;
+  background-color: $mahogany;
   padding: 60px 0;
   text-align: center;
 
   h3 {
-    color: #ffffff;
+    color: $colorWhiteOne;
     font-size: 2.6rem;
     margin-bottom: 16px;
   }
@@ -375,7 +424,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0;
+    padding-block: 40px;
   }
 
   .flexContent {
@@ -402,28 +451,38 @@ header {
     border-radius: 25px;
   }
 
-
   @media screen and (max-width: 768px) {
     .flexLayout {
       flex-direction: column;
       text-align: center;
+      padding-block: 30px;
     }
 
     .flexLayout.reversed {
       flex-direction: column-reverse;
     }
+
+    .flexContent {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
   }
 }
 
-
-
 .testimonialsSection {
-  background-color: #8B4513;
+  background-color: $mahogany;
   padding: 60px 0;
   text-align: center;
 
   .testimonialsHeading {
-    color: #ffffff;
+    color: $colorWhiteOne;
     font-size: 28px;
     margin-bottom: 30px;
   }
@@ -454,8 +513,11 @@ header {
   }
 
   .testimonialImage img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
     max-width: 100%;
-    height: auto;
     border-radius: 50%;
     border: 1px solid $colorWhiteTwo;
   }
@@ -467,8 +529,9 @@ header {
   }
 
   .testimonialText {
-    color: #420000;
-    font-size: 2.6rem;
+    color: $colorWhiteOne;
+    font-size: 2rem;
+    line-height: 1.5em;
   }
 
   .sliderControls {
@@ -481,13 +544,16 @@ header {
 
   .prevSlideBtn,
   .nextSlideBtn {
-    background-color: #FFD700;
-    color: #420000;
-    border: none;
-    padding: 10px 20px;
+    background-color: $golden-yellow;
+    border: 1px solid $golden-yellow;
+    color: $mahogany;
+    padding: 5px 10px;
     margin: 0 10px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .prevSlideBtn {
@@ -498,8 +564,11 @@ header {
 
   .prevSlideBtn:hover,
   .nextSlideBtn:hover {
-    background-color: #420000;
-    color: #FFD700;
+    background-color: $mahogany;
+    color: $golden-yellow;
+    svg {
+      fill: $golden-yellow;
+    }
   }
 
   @media (max-width: 768px) {
@@ -517,11 +586,9 @@ header {
   }
 }
 
-
-
 .coachesSection {
-  background-color: #420000;
-  color: #FFD700;
+  background-color: $mahogany;
+  color: $golden-yellow;
   padding: 60px 0;
 
   .coachesFlex {
@@ -537,30 +604,14 @@ header {
   }
 
   h2 {
-    font-size: 3.4rem;
     line-height: 1.4em;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
   }
 
   p {
     font-size: 1.6rem;
     line-height: 1.6em;
-    margin-bottom: 12px;
-  }
-
-  button {
-    background-color: transparent;
-    border: 2px solid #FFD700;
-    color: #FFD700;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-    &:hover {
-      background-color: #FFD700;
-      color: #420000;
-    }
+    margin-bottom: 20px;
   }
 
   .coachesImage {
@@ -586,20 +637,17 @@ header {
     }
 
     .coachesImage {
-      margin-top: 20px;
+      margin-block: 20px;
       text-align: center;
+      max-width: 400px;
     }
   }
 }
 
 .featuresSection {
-  background-color: #420000;
-  color: #FFD700;
+  background-color: $mahogany;
+  color: $golden-yellow;
   text-align: center;
-
-  h2 {
-    margin-bottom: 30px;
-  }
 
   .featuresFlex {
     display: flex;
@@ -616,9 +664,9 @@ header {
     max-width: 280px;
     text-align: center;
     padding: 24px;
-    background-color: rgba(255, 215, 0, 0.1);
+    background-color: rgba($colorBlackOne, 0.3);
     border-radius: 16px;
-    border: 1px solid #FFD700;
+    border: 1px solid $earthly-brown;
 
     img {
       max-width: 100%;
@@ -637,27 +685,21 @@ header {
     }
   }
 
-  // Media query for responsiveness
   @media screen and (max-width: 768px) {
     .featuresFlex {
       flex-direction: column;
       align-items: center;
-    }
-
-    .featureCard {
-      max-width: 100%;
-      margin-bottom: 20px;
+      gap: 15px;
     }
   }
 }
 
 .faqSection {
-  background-color: #fff;
+  background-color: $mahogany;
   text-align: center;
 
   h2 {
-    margin-bottom: 30px;
-    color: #333;
+    color: $colorWhiteOne;
   }
 
   .faqAccordion {
@@ -671,16 +713,21 @@ header {
 
   .faqItem {
     padding: 24px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
-    margin-bottom: 20px;
+    box-shadow: rgba($colorBlackOne, 0.2) 0px 2px 1px -1px,
+      rgba($colorBlackOne, 0.14) 0px 1px 1px 0px,
+      rgba($colorBlackOne, 0.12) 0px 1px 3px 0px;
     cursor: pointer;
     transition: border-color 0.3s ease-in-out;
     text-align: left;
-    background-color: #f5f5f5;
+    background-color: rgba($colorWhiteOne, 0.9);
     border-radius: 8px;
 
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
     .faqQuestion {
-      color: #333;
+      color: $colorBlackOne;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
@@ -694,7 +741,7 @@ header {
 
     .faqAnswer {
       display: none;
-      color: #333;
+      color: $colorBlackOne;
       padding-top: 8px;
       font-size: 1.6rem;
     }
@@ -711,46 +758,31 @@ header {
       }
     }
   }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 1.6rem;
+    }
+    .faqItem {
+      padding: 12px;
+    }
+  }
 }
 
 .callToActionSection {
-  background-color: #420000;
-  color: #FFD700;
+  background-color: $mahogany;
+  color: $golden-yellow;
   text-align: center;
 
-  h2 {
-    margin-bottom: 20px;
-  }
-
   .ctaButton {
-    background-color: transparent;
-    border: 2px solid #FFD700;
-    color: #FFD700;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    svg {
-      fill: #FFD700;
-    }
   }
 
   .ctaButton .arrowIcon {
     margin-left: 10px;
     transition: transform 0.3s ease-in-out;
-  }
-
-  .ctaButton:hover {
-    background-color: #FFD700;
-    color: #420000;
-
-    svg {
-      fill: #420000;
-    }
   }
 
   /* Media query for responsiveness */
@@ -761,12 +793,11 @@ header {
   }
 }
 
-/* Footer Section */
 footer {
-  background-color: #420000;
-  color: #FFD700;
+  background-color: $mahogany;
+  color: $golden-yellow;
   padding: 40px 0;
-  border-top: 1px solid rgba(97, 97, 97, 1);
+  border-top: 1px solid rgba($golden-yellow, 0.4);
 
   h3 {
     font-size: 1.6rem;
@@ -781,7 +812,7 @@ footer {
     width: 100%;
     padding-bottom: 40px;
     gap: 48px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba($colorWhiteOne, 0.12);
 
     .footer-left {
       flex: 1;
@@ -816,13 +847,13 @@ footer {
       margin-bottom: 10px;
 
       a {
-        color: #FFD700;
+        color: $golden-yellow;
         text-decoration: none;
         transition: color 0.3s ease-in-out;
         font-size: 1.6rem;
 
         &:hover {
-          color: #8B4513;
+          color: $colorWhiteTwo;
         }
       }
     }
@@ -842,6 +873,12 @@ footer {
     .social-icons {
       display: flex;
       gap: 20px;
+      img {
+        border-radius: 50%;
+        &:hover {
+          box-shadow: 0 0 10px rgba($colorWhiteOne, 0.3);
+        }
+      }
     }
   }
 
@@ -850,16 +887,15 @@ footer {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: 25px;
+      padding-bottom: 20px;
     }
 
     .footer-bottom {
       flex-direction: column;
       text-align: center;
       gap: 20px;
-
-      .social-icons {
-        margin-top: 10px;
-      }
+      padding-top: 20px;
     }
   }
 }
