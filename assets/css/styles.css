@@ -45,7 +45,6 @@ button {
   color: #000000;
   border-radius: 36px;
   padding: 6px 16px;
-  border: none;
   outline: none;
   cursor: pointer;
 }
@@ -175,8 +174,8 @@ header .bar {
 }
 
 .bannerSection {
-  background-color: #8B4513;
-  color: #FFD700;
+  background-color: #000000;
+  color: #ffffff;
 }
 .bannerSection .bannerContentWrapper {
   display: flex;
@@ -197,29 +196,33 @@ header .bar {
   line-height: 1.4em;
 }
 .bannerSection .bannerContent button {
-  background-color: #420000;
-  color: #FFD700;
+  background-color: #FFD700;
+  color: #000000;
+  border: 1px solid #FFD700;
   padding: 1.8rem 3rem;
   font-size: 1.5rem;
   font-weight: 600;
-  border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .bannerSection .bannerContent button:hover {
-  background-color: #FFD700;
-  color: #420000;
+  background-color: transparent;
+  color: #FFD700;
 }
 .bannerSection .bannerVideo {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+}
+.bannerSection .bannerVideo:hover p {
+  color: #FFD700;
 }
 .bannerSection .bannerVideo svg {
   width: 80px;
   height: 80px;
-  fill: #420000;
+  fill: #f5f5f5;
   transition: fill 0.3s;
   cursor: pointer;
 }
@@ -302,12 +305,12 @@ header .bar {
 }
 
 .aboutSection {
-  background-color: #8B4513;
+  background-color: #420000;
   padding: 60px 0;
   text-align: center;
 }
 .aboutSection h3 {
-  color: #420000;
+  color: #ffffff;
   font-size: 2.6rem;
   margin-bottom: 16px;
 }
@@ -325,7 +328,7 @@ header .bar {
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.4em;
-  color: #420000;
+  color: rgba(255, 255, 255, 0.7019607843);
   margin-bottom: 20px;
 }
 .aboutSection .flexImage {
