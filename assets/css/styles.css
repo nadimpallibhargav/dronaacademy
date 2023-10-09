@@ -703,6 +703,7 @@ footer .footer-flex .footer-left img {
 footer .footer-flex .footer-left p {
   margin-top: 24px;
   font-size: 1.6rem;
+  margin-bottom: 20px;
 }
 footer .footer-flex .footer-right {
   display: flex;
