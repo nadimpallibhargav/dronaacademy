@@ -396,7 +396,7 @@ header {
     right: 0;
     transform: translate(50%, -50%);
     svg {
-      fill: $blackTwo;
+      fill: $whiteOne;
     }
   }
 
@@ -661,34 +661,50 @@ header {
     justify-content: center;
     gap: 24px;
     flex-wrap: wrap;
-
-    &:first-of-type {
-      margin-bottom: 48px;
-    }
   }
 
   .featureCard {
     max-width: 280px;
     text-align: center;
     padding: 24px;
-    background-color: rgba($blackOne, 0.3);
+    background-color: rgba($blackOne, 0.6);
     border-radius: 16px;
     border: 1px solid $blueOne;
 
     img {
-      max-width: 100%;
-      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
       margin-bottom: 10px;
     }
 
     h3 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 8px;
+      color: $whiteOne;
+    }
+
+    h4 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: yellow;
+    }
+
+    li {
+      font-size: 1.4rem;
+      color: yellow;
+      text-align: left;
+      text-transform: capitalize;
+      font-weight: 600;
+      &:not(:last-of-type) {
+        margin-bottom: 5px;
+      }
     }
 
     p {
       font-size: 16px;
       line-height: 1.5em;
+      color: $whiteTwo;
     }
   }
 
@@ -698,6 +714,20 @@ header {
       align-items: center;
       gap: 15px;
     }
+  }
+}
+
+.whatYouGetSection {
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.topersSection {
+  img {
+    width: 150px;
+    height: 150px;
   }
 }
 
