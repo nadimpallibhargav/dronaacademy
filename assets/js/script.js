@@ -1,23 +1,27 @@
+const containers = document.querySelectorAll('.testimonialSlider');
 
-const sliderWrapper = document.querySelector('.sliderWrapper');
-const prevSlideBtn = document.querySelector('.prevSlideBtn');
-const nextSlideBtn = document.querySelector('.nextSlideBtn');
+containers.forEach((container) => {
+    const sliderWrapper = container.querySelector('.sliderWrapper');
+    const prevSlideBtn = container.querySelector('.prevSlideBtn');
+    const nextSlideBtn = container.querySelector('.nextSlideBtn');
 
-let currentSlide = 0;
+    let currentSlide = 0;
 
-nextSlideBtn.addEventListener('click', () => {
-    sliderWrapper.scrollLeft += sliderWrapper.clientWidth;
-    if (sliderWrapper.scrollLeft >= sliderWrapper.scrollWidth) {
-        sliderWrapper.scrollLeft = 0;
-    }
+    nextSlideBtn.addEventListener('click', () => {
+        sliderWrapper.scrollLeft += sliderWrapper.clientWidth;
+        if (sliderWrapper.scrollLeft >= sliderWrapper.scrollWidth) {
+            sliderWrapper.scrollLeft = 0;
+        }
+    });
+
+    prevSlideBtn.addEventListener('click', () => {
+        sliderWrapper.scrollLeft -= sliderWrapper.clientWidth;
+        if (sliderWrapper.scrollLeft < 0) {
+            sliderWrapper.scrollLeft = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
+        }
+    });
 });
 
-prevSlideBtn.addEventListener('click', () => {
-    sliderWrapper.scrollLeft -= sliderWrapper.clientWidth;
-    if (sliderWrapper.scrollLeft < 0) {
-        sliderWrapper.scrollLeft = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
-    }
-});
 
 document.addEventListener('DOMContentLoaded', function () {
     const faqItems = document.querySelectorAll('.faqItem');
@@ -47,39 +51,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const watchNowButton = document.querySelector('.bannerVideo');
-const popupOverlay = document.getElementById('popupOverlay');
-const videoPlayer = document.getElementById('videoPlayer');
-const closePopupButton = document.getElementById('closePopupButton');
+// const watchNowButton = document.querySelector('.bannerVideo');
+// const popupOverlay = document.getElementById('popupOverlay');
+// const videoPlayer = document.getElementById('videoPlayer');
+// const closePopupButton = document.getElementById('closePopupButton');
 
-watchNowButton.addEventListener('click', () => {
-    popupOverlay.style.display = 'flex';
-    videoPlayer.src = videoPlayer.src;
-});
+// watchNowButton.addEventListener('click', () => {
+//     popupOverlay.style.display = 'flex';
+//     videoPlayer.src = videoPlayer.src;
+// });
 
-closePopupButton.addEventListener('click', () => {
-    popupOverlay.style.display = 'none';
-});
+// closePopupButton.addEventListener('click', () => {
+//     popupOverlay.style.display = 'none';
+// });
 
-// Get references to the Apply Now buttons
-const applyButtons = document.querySelectorAll('.ctaButton');
-const popupOverlayForm = document.getElementById('formPopup');
-const closePopupButtonForm = document.getElementById('closePopupButtonForm');
+// // Get references to the Apply Now buttons
+// const applyButtons = document.querySelectorAll('.ctaButton');
+// const popupOverlayForm = document.getElementById('formPopup');
+// const closePopupButtonForm = document.getElementById('closePopupButtonForm');
 
-// Function to open the form popup
-function openFormPopup() {
-    popupOverlayForm.style.display = 'flex';
-}
+// // Function to open the form popup
+// function openFormPopup() {
+//     popupOverlayForm.style.display = 'flex';
+// }
 
-// Function to close the form popup
-function closeFormPopup() {
-    popupOverlayForm.style.display = 'none';
-}
+// // Function to close the form popup
+// function closeFormPopup() {
+//     popupOverlayForm.style.display = 'none';
+// }
 
-// Attach a click event listener to each Apply Now button
-applyButtons.forEach(function (applyButton) {
-    applyButton.addEventListener('click', openFormPopup);
-});
+// // Attach a click event listener to each Apply Now button
+// applyButtons.forEach(function (applyButton) {
+//     applyButton.addEventListener('click', openFormPopup);
+// });
 
-// Attach a click event listener to the close button in the form popup
-closePopupButtonForm.addEventListener('click', closeFormPopup);
+// // Attach a click event listener to the close button in the form popup
+// closePopupButtonForm.addEventListener('click', closeFormPopup);

@@ -68,6 +68,8 @@ section {
   font-size: 1.5rem;
   font-weight: 600;
   transition: background-color 0.3s;
+  border-radius: 36px;
+  display: inline-flex;
 }
 .commonBtn:hover {
   background-color: transparent;
@@ -90,8 +92,10 @@ section {
   color: #3498db;
   padding: 10px 20px;
   font-size: 1.5rem;
+  border-radius: 36px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: inline-flex;
 }
 .outlineBtn:hover {
   background-color: #3498db;
@@ -114,10 +118,22 @@ h2.heading {
 header {
   background-color: transparent;
   color: #333333;
-  padding: 16px;
+  padding-block: 16px;
   border-bottom: 1px solid rgba(51, 51, 51, 0.8);
 }
+header .navTop {
+  text-align: center;
+  padding-block: 10px;
+}
+header .navTop img {
+  max-height: 30px;
+}
+header .logo {
+  height: 75px;
+}
 header .logo img {
+  height: 100%;
+  width: auto;
   border-radius: 25px;
   border: 1px solid #000000;
 }
@@ -126,7 +142,11 @@ header nav {
   justify-content: space-between;
   align-items: center;
 }
+header .deskMenu {
+  padding-right: 20px;
+}
 header ul.menu {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -166,7 +186,7 @@ header .menu-toggle {
   width: 30px;
   height: 20px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 header .menu-toggle.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -187,6 +207,15 @@ header .bar {
   header {
     display: block;
   }
+  header .logo {
+    height: 50px;
+  }
+  header .navTop {
+    padding-block: 10px;
+  }
+  header .navTop img {
+    max-height: 20px;
+  }
   header ul.menu {
     display: none;
     gap: 0;
@@ -202,6 +231,9 @@ header .bar {
   }
   header ul.mobile-menu.active {
     display: flex;
+  }
+  header .deskBtn {
+    display: none;
   }
 }
 
@@ -513,6 +545,11 @@ header .bar {
   }
 }
 
+.testimonials img {
+  border-radius: 10px;
+  max-height: 70vh;
+}
+
 .coachesSection {
   background-color: #f5f5f5;
   color: #3498db;
@@ -630,6 +667,18 @@ header .bar {
   height: 150px;
 }
 
+.toppersSlider .sliderItem img {
+  border-radius: 40px;
+}
+
+.coursesSection {
+  text-align: center;
+}
+.coursesSection img {
+  width: 600px;
+  border-radius: 20px;
+}
+
 .faqSection {
   background-color: #f5f5f5;
   text-align: center;
@@ -694,17 +743,17 @@ header .bar {
   color: #3498db;
   text-align: center;
 }
-.callToActionSection .ctaButton {
+.callToActionSection .commonBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.callToActionSection .ctaButton .arrowIcon {
+.callToActionSection .commonBtn .arrowIcon {
   margin-left: 10px;
   transition: transform 0.3s ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .callToActionSection .ctaButton {
+  .callToActionSection .commonBtn {
     font-size: 14px;
   }
 }

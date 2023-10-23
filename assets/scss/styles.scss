@@ -77,6 +77,8 @@ section {
   font-size: 1.5rem;
   font-weight: 600;
   transition: background-color 0.3s;
+  border-radius: 36px;
+  display: inline-flex;
 
   &:hover {
     background-color: transparent;
@@ -102,8 +104,10 @@ section {
   color: $blueOne;
   padding: 10px 20px;
   font-size: 1.5rem;
+  border-radius: 36px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: inline-flex;
 
   &:hover {
     background-color: $blueOne;
@@ -125,11 +129,22 @@ h2.heading {
 header {
   background-color: transparent;
   color: $blackTwo;
-  padding: 16px;
+  padding-block: 16px;
   border-bottom: 1px solid $blackThree;
 
-  .logo {
+  .navTop {
+    text-align: center;
+    padding-block: 10px;
     img {
+      max-height: 30px;
+    }
+  }
+
+  .logo {
+    height: 75px;
+    img {
+      height: 100%;
+      width: auto;
       border-radius: 25px;
       border: 1px solid $blackOne;
     }
@@ -141,7 +156,12 @@ header {
     align-items: center;
   }
 
+  .deskMenu {
+    padding-right: 20px;
+  }
+
   ul.menu {
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -186,7 +206,7 @@ header {
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 
     &.active {
       .bar:nth-child(1) {
@@ -213,14 +233,25 @@ header {
   @media screen and (max-width: 768px) {
     display: block;
 
+    .logo {
+      height: 50px;
+    }
+
+    .navTop {
+      padding-block: 10px;
+      img {
+        max-height: 20px;
+      }
+    }
+
     ul.menu {
       display: none;
       gap: 0;
       li {
-          a {
-            color: $whiteOne;
-          }
+        a {
+          color: $whiteOne;
         }
+      }
     }
 
     .menu-toggle {
@@ -233,6 +264,10 @@ header {
       &.active {
         display: flex;
       }
+    }
+
+    .deskBtn {
+      display: none;
     }
   }
 }
@@ -598,6 +633,13 @@ header {
   }
 }
 
+.testimonials {
+  img {
+    border-radius: 10px;
+    max-height: 70vh;
+  }
+}
+
 .coachesSection {
   background-color: $whiteTwo;
   color: $blueOne;
@@ -736,6 +778,22 @@ header {
   }
 }
 
+.toppersSlider {
+  .sliderItem {
+    img {
+      border-radius: 40px;
+    }
+  }
+}
+
+.coursesSection {
+  text-align: center;
+  img {
+    width: 600px;
+    border-radius: 20px;
+  }
+}
+
 .faqSection {
   background-color: $whiteTwo;
   text-align: center;
@@ -817,19 +875,19 @@ header {
   color: $blueOne;
   text-align: center;
 
-  .ctaButton {
+  .commonBtn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  .ctaButton .arrowIcon {
+  .commonBtn .arrowIcon {
     margin-left: 10px;
     transition: transform 0.3s ease-in-out;
   }
 
   @media screen and (max-width: 768px) {
-    .ctaButton {
+    .commonBtn {
       font-size: 14px;
     }
   }
